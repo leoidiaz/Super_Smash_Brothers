@@ -23,7 +23,7 @@ static NSString *const characterComponent = @"characters";
     // URL
     NSURL *baseURL = [NSURL URLWithString:baseURLString];
     NSURL *finalURL = [baseURL URLByAppendingPathComponent:characterComponent];
-    NSLog(@"%@", finalURL);
+//    NSLog(@"%@", finalURL);
     
     //Session
     [[[NSURLSession sharedSession] dataTaskWithURL:finalURL completionHandler:^(NSData *  data, NSURLResponse *  response, NSError *  error) {
@@ -64,7 +64,7 @@ static NSString *const characterComponent = @"characters";
     NSString *thumbnailString = [[NSString alloc]initWithFormat:@"%@", character.thumbnail];
     NSURL *thumbnailURL = [[NSURL alloc] initWithString:thumbnailString];
     
-    NSLog(@"%@", thumbnailURL);
+//    NSLog(@"%@", thumbnailURL);
 
     [[[NSURLSession sharedSession] dataTaskWithURL:thumbnailURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         
@@ -94,10 +94,12 @@ static NSString *const characterComponent = @"characters";
 
 #pragma mark - Fetch moves
 
-+ (void)fetchMovesWithCharacter:(LIDCharacters *)character completion:(void (^)(NSArray<NSString *> * ))completion
++ (void)fetchMovesWithCharacter:(LIDCharacters *)character completion:(void (^)(NSArray<LIDMoves *> * ))completion
 {
-    NSString *thumbnailString = [[NSString alloc]initWithFormat:@"%@", character.moves];
-    NSURL *movesURL = [[NSURL alloc] initWithString:thumbnailString];
+    NSString *movesString = [[NSString alloc]initWithFormat:@"%@", character.moves];
+    NSURL *movesURL = [[NSURL alloc] initWithString:movesString];
+    
+//    NSLog(@"%@", movesURL);
     
     [[[NSURLSession sharedSession] dataTaskWithURL:movesURL completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
         

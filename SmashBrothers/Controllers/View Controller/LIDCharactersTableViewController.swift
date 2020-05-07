@@ -10,8 +10,8 @@ import UIKit
 
 class LIDCharactersTableViewController: UITableViewController {
     //MARK: - Properties
-    
     private let segueIdentifier = "toMovesVC"
+    private let reuseIdentifier = "characterCell"
     
     var characters = [LIDCharacters](){
         didSet{
@@ -40,21 +40,19 @@ class LIDCharactersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "characterCell", for: indexPath) as? LIDCharacterTableViewCell else { return UITableViewCell()}
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath) as? LIDCharacterTableViewCell else { return UITableViewCell()}
         let character = characters[indexPath.row]
         cell.character = character
-        LIDCharacterController.fetchthumbNail(withCharacter: character) { (thumbnail) in
-            DispatchQueue.main.async {
-                cell.thumbnail = thumbnail                
-            }
-        }
         return cell
     }
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == segueIdentifier{
+            guard let indexPath = tableView.indexPathForSelectedRow, let destinationVC = segue.destination as? LIDMovesListTableViewController else { return }
+            let character = characters[indexPath.row]
+            destinationVC.character = character
+        }
     }
 
 }

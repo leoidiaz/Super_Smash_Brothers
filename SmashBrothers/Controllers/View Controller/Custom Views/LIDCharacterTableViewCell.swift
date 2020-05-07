@@ -21,18 +21,22 @@ class LIDCharacterTableViewCell: UITableViewCell {
         }
     }
     
-    var thumbnail: UIImage?{
-        didSet{
-            updateCell()
-        }
-    }
+    //    var thumbnail: UIImage?{
+    //        didSet{
+    //            updateCell()
+    //        }
+    //    }
     
     //MARK: - Private Methods
     private func updateCell(){
-        guard let character = character else {return}
+        guard let character = character else { return }
         characterLabel.text = character.name
-        guard let thumbnail = thumbnail else {return}
-        characterImageView.image = thumbnail
+        characterImageView.image = nil
+        LIDCharacterController.fetchthumbNail(withCharacter: character) { (thumbnail) in
+            DispatchQueue.main.async {
+                self.characterImageView.image = thumbnail
+            }
+        }
     }
     
 }

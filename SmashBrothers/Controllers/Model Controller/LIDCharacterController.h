@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "LIDCharacters.h"
+#import "LIDMoves.h"
 #import <UIKit/UIKit.h>
 
 NS_ASSUME_NONNULL_BEGIN
@@ -16,7 +17,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 +(void)fetchWithCharacters:(void(^)(NSArray <LIDCharacters *>*))completion;
 +(void)fetchthumbNailWithCharacter:(LIDCharacters*)character completion:(void(^)(UIImage *))completion;
-+(void)fetchMovesWithCharacter:(LIDCharacters *)character completion:(void(^)(NSArray<NSString *>*))completion;
++(void)fetchMovesWithCharacter:(LIDCharacters *)character completion:(void(^)(NSArray<LIDMoves *>*))completion;
 
 @end
 

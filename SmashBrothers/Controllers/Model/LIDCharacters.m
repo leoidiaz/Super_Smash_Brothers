@@ -31,9 +31,10 @@
     NSString *thumbnail = dictionary[@"ThumbnailUrl"];
     
     NSDictionary *related = dictionary[@"Related"];
-    NSString *smash4 = related[@"Moves"];
+    NSDictionary *smash4 = related[@"Smash4"];
+    NSString *moves = smash4[@"Moves"];
     
-    return [self initWithCharacterName:name thumbnail:thumbnail moves:smash4];
+    return [self initWithCharacterName:name thumbnail:thumbnail moves:moves];
 }
 
 @end

@@ -15,10 +15,11 @@ class LIDMovesListTableViewController: UITableViewController {
     
     var character: LIDCharacters?
     
-    var moves = [String](){
+    var moves = [LIDMoves](){
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.title = ("\(self.moves.count) Moves")
             }
         }
     }
@@ -47,7 +48,7 @@ class LIDMovesListTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
         let move = moves[indexPath.row]
-        cell.textLabel?.text = move
+        cell.textLabel?.text = move.moveName
         return cell
     }
 }
