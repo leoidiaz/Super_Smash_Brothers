@@ -17,6 +17,7 @@ class LIDCharactersTableViewController: UITableViewController {
         didSet{
             DispatchQueue.main.async {
                 self.tableView.reloadData()
+                self.title = ("\(self.characters.count) Characters")
             }
         }
     }
