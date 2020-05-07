@@ -16,6 +16,9 @@
 		29EEEB1E2464A15500A9B5C6 /* LIDCharacters.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EEEB1D2464A15500A9B5C6 /* LIDCharacters.m */; };
 		29EEEB212464A17100A9B5C6 /* LIDMoves.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EEEB202464A17100A9B5C6 /* LIDMoves.m */; };
 		29EEEB242464AABD00A9B5C6 /* LIDCharacterController.m in Sources */ = {isa = PBXBuildFile; fileRef = 29EEEB232464AABD00A9B5C6 /* LIDCharacterController.m */; };
+		29EEEB272464B40C00A9B5C6 /* LIDCharactersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EEEB262464B40C00A9B5C6 /* LIDCharactersTableViewController.swift */; };
+		29EEEB292464B58C00A9B5C6 /* LIDMovesListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EEEB282464B58C00A9B5C6 /* LIDMovesListTableViewController.swift */; };
+		29EEEB2C2464B67F00A9B5C6 /* LIDCharacterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29EEEB2B2464B67F00A9B5C6 /* LIDCharacterTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +38,10 @@
 		29EEEB202464A17100A9B5C6 /* LIDMoves.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LIDMoves.m; sourceTree = "<group>"; };
 		29EEEB222464AABD00A9B5C6 /* LIDCharacterController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LIDCharacterController.h; sourceTree = "<group>"; };
 		29EEEB232464AABD00A9B5C6 /* LIDCharacterController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LIDCharacterController.m; sourceTree = "<group>"; };
+		29EEEB252464B40C00A9B5C6 /* SmashBrothers-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SmashBrothers-Bridging-Header.h"; sourceTree = "<group>"; };
+		29EEEB262464B40C00A9B5C6 /* LIDCharactersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIDCharactersTableViewController.swift; sourceTree = "<group>"; };
+		29EEEB282464B58C00A9B5C6 /* LIDMovesListTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIDMovesListTableViewController.swift; sourceTree = "<group>"; };
+		29EEEB2B2464B67F00A9B5C6 /* LIDCharacterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIDCharacterTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -118,6 +125,10 @@
 		29EEEB192464843700A9B5C6 /* View Controller */ = {
 			isa = PBXGroup;
 			children = (
+				29EEEB2A2464B67100A9B5C6 /* Custom Views */,
+				29EEEB252464B40C00A9B5C6 /* SmashBrothers-Bridging-Header.h */,
+				29EEEB262464B40C00A9B5C6 /* LIDCharactersTableViewController.swift */,
+				29EEEB282464B58C00A9B5C6 /* LIDMovesListTableViewController.swift */,
 			);
 			path = "View Controller";
 			sourceTree = "<group>";
@@ -140,6 +151,14 @@
 				29EEEB202464A17100A9B5C6 /* LIDMoves.m */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		29EEEB2A2464B67100A9B5C6 /* Custom Views */ = {
+			isa = PBXGroup;
+			children = (
+				29EEEB2B2464B67F00A9B5C6 /* LIDCharacterTableViewCell.swift */,
+			);
+			path = "Custom Views";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +193,7 @@
 				TargetAttributes = {
 					29EEEAF8246483D900A9B5C6 = {
 						CreatedOnToolsVersion = 11.4;
+						LastSwiftMigration = 1140;
 					};
 				};
 			};
@@ -216,8 +236,11 @@
 				29EEEB212464A17100A9B5C6 /* LIDMoves.m in Sources */,
 				29EEEAFE246483D900A9B5C6 /* AppDelegate.m in Sources */,
 				29EEEB0F246483DB00A9B5C6 /* main.m in Sources */,
+				29EEEB272464B40C00A9B5C6 /* LIDCharactersTableViewController.swift in Sources */,
+				29EEEB2C2464B67F00A9B5C6 /* LIDCharacterTableViewCell.swift in Sources */,
 				29EEEB01246483D900A9B5C6 /* SceneDelegate.m in Sources */,
 				29EEEB1E2464A15500A9B5C6 /* LIDCharacters.m in Sources */,
+				29EEEB292464B58C00A9B5C6 /* LIDMovesListTableViewController.swift in Sources */,
 				29EEEB242464AABD00A9B5C6 /* LIDCharacterController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -358,6 +381,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74FP7YTMHY;
 				INFOPLIST_FILE = SmashBrothers/Resources/Info.plist;
@@ -367,6 +391,9 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.SmashBrothers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmashBrothers/Controllers/View Controller/SmashBrothers-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
@@ -375,6 +402,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 74FP7YTMHY;
 				INFOPLIST_FILE = SmashBrothers/Resources/Info.plist;
@@ -384,6 +412,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.leonardo.SmashBrothers;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "SmashBrothers/Controllers/View Controller/SmashBrothers-Bridging-Header.h";
+				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
